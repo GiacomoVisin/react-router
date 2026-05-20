@@ -1,2 +1,13 @@
 @import url('bootstrap');
 @import url('bootstrap-icons');
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.card{
+    height: 400px;
+    display: flex;
+
+}
