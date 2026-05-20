@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes } from "react-router-dom"
 
 
 function App() {
@@ -5,7 +6,13 @@ function App() {
 
   return (
     <>
-     
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+
+      </Route>
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
