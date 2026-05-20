@@ -19,7 +19,7 @@ export default function Products() {
                     {products.map((item) => (
                         <div className="col col-lg-4 col-md-4 " key={item.id}>
                             <div className="card p-3 mb-3">
-                                <img src={item.image} alt={item.description} style={{height: "250px"}} />
+                                <img src={item.image} alt={item.description} style={{height: "300px"}} />
                                 <p> <strong>Title: </strong>{item.title} </p>
                                 <p> <strong>Price: </strong> {item.price} $ </p>
                             </div>
