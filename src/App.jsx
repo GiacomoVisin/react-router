@@ -3,6 +3,7 @@ import Layout from "./components/Layout"
 import Home from "./components/Home"
 import About from "./components/About"
 import Products from "./components/Products"
+import ProductPage from "./components/ProductPage"
 
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home/>} />
-            <Route path="chi-siamo" element={<About/>}/>
-            <Route path="prodotti" element={<Products/>}/>
+          <Route path="/" Component={Layout}>
+            <Route index Component={Home} />
+            <Route path="chi-siamo" Component={About}/>
+            <Route path="prodotti" Component={Products}/>
+            <Route path="prodotti/:id" Component={ProductPage}/>
           </Route>
         </Routes>
       </BrowserRouter>
