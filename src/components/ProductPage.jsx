@@ -41,7 +41,7 @@ export default function ProductPage() {
     return (
 
         <div className="container">
-            <div className="card center p-3" style={{ height: "800px", width: "500px" }} >
+            <div className="card center p-3" style={{ minHeight: "800px", maxHeight: "2000px" ,width: "500px" }} >
                 <img src={item.image} alt={item.description} style={{ width: "300px" }} className="mb-2 center" />
                 <p> <strong>Category: </strong>{item.category} </p>
                 <p> <strong>Title: </strong>{item.title} </p>
@@ -50,7 +50,7 @@ export default function ProductPage() {
                 <hr />
                 <p> <strong>Rating: </strong> {item?.rating?.rate}⭐  <strong>Count: </strong> {item?.rating?.count}</p>
                 <hr />
-                <button onClick={Next}> next </button>
+                <button className="mb-2" onClick={Next}> next </button>
                 <button onClick={Prev}> Prev </button>
 
             </div>
