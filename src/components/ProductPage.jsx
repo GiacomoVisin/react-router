@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 export default function ProductPage() {
     const { id } = useParams()
     const [item, setItem] = useState([])
-    const [loading,setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     const navigate = useNavigate()
 
     const api = `https://fakestoreapi.com/products/${id}`
@@ -25,9 +25,9 @@ export default function ProductPage() {
             });
     }, [api, navigate]);
 
-        if (loading) {
-  return <h2>Caricamento prodotto...</h2>;
-}
+    if (loading) {
+        return <h2>Caricamento prodotto...</h2>;
+    }
 
     return (
 
