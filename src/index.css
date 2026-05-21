@@ -1,7 +1,7 @@
 @import url('bootstrap');
 @import url('bootstrap-icons');
 
-a {
+.navlink{
     text-decoration: none;
     color: black;
 }
@@ -12,7 +12,13 @@ a {
 
 }
 
-a.active{
+.navlink.active{
     font-weight: bold;
     border-bottom: 1px solid black;
+}
+
+.center{
+    position:relative;
+    left: 50%;
+    transform: translate(-50%);
 }

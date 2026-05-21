@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-
+import { Link } from "react-router-dom"
+import ProductPage from "./ProductPage"
 export default function Products() {
 
     const [products, setProducts] = useState([])
@@ -22,6 +23,7 @@ export default function Products() {
                                 <img src={item.image} alt={item.description} style={{height: "300px"}} />
                                 <p> <strong>Title: </strong>{item.title} </p>
                                 <p> <strong>Price: </strong> {item.price} $ </p>
+                                <Link className="link" to={`/prodotti/${item.id}`}> More...</Link>
                             </div>
                         </div>
                     ))}
