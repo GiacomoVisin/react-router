@@ -8,6 +8,8 @@ export default function ProductPage() {
 
     const api = `https://fakestoreapi.com/products/${id}`
 
+
+
     useEffect(() => {
         fetch(api)
             .then(res => res.json())
@@ -29,6 +31,13 @@ export default function ProductPage() {
         return <h2>Caricamento prodotto...</h2>;
     }
 
+    const Next = () => {
+        navigate(`/prodotti/${Number(id) + 1}`);
+    };
+    const Prev = () => {
+        navigate(`/prodotti/${Number(id) - 1}`);
+    };
+
     return (
 
         <div className="container">
@@ -40,7 +49,12 @@ export default function ProductPage() {
                 <p> <strong>Description: </strong> {item.description} $ </p>
                 <hr />
                 <p> <strong>Rating: </strong> {item?.rating?.rate}⭐  <strong>Count: </strong> {item?.rating?.count}</p>
+                <hr />
+                <button onClick={Next}> next </button>
+                <button onClick={Prev}> Prev </button>
+
             </div>
+
         </div>
     )
 }
