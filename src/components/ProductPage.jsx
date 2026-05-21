@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react"
-import { useParams,useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 export default function ProductPage() {
     const { id } = useParams()
-    const [item, setCharacter] = useState([])
+    const [item, setItem] = useState([])
+    const navigate = useNavigate()
 
     const api = `https://fakestoreapi.com/products/${id}`
 
     useEffect(() => {
         fetch(api)
             .then(res => res.json())
-            .then(data => setCharacter(data))
-            .catch(err => console.error(err))
-    }, [])
+            .then(data => {
+                if (data.error) {
+                    navigate(-1);
+                    return;
+                }
+
+                setItem(data);
+            })
+            .catch(() => {
+                navigate(-1);
+            });
+    }, [api, navigate]);
+
+
 
     return (
         <div className="container">
