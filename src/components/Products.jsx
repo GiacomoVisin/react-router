@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ProductPage from "./ProductPage"
 import Card from "./Card"
-export default function Products({item}) {
+export default function Products({products}) {
 
-    const [products, setProducts] = useState([])
 
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-            .then((res) => res.json())
-            .then((data) => setProducts(data))
-            
 
-    }, [])
     return (
         <>
             <h1>Prodotti</h1>
