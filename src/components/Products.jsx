@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import ProductPage from "./ProductPage"
-export default function Products() {
+import Card from "./Card"
+export default function Products({item}) {
 
     const [products, setProducts] = useState([])
 
@@ -20,12 +21,7 @@ export default function Products() {
                 <div className="row">
                     {products.map((item) => (
                         <div className="col col-lg-4 col-md-4 " key={item.id}>
-                            <div className="card p-3 mb-3">
-                                <img src={item.image} alt={item.description} style={{height: "300px"}} />
-                                <p> <strong>Title: </strong>{item.title} </p>
-                                <p> <strong>Price: </strong> {item.price} $ </p>
-                                <Link className="link" to={`/prodotti/${item.id}`}> More...</Link>
-                            </div>
+                           <Card item={item}/>
                         </div>
                     ))}
                 </div>
